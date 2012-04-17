@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="author" title="Shai Berger" href="mailto:shai@platonix.com">
+    <link rel="author" title="HTML5 bidi test WG" href="mailto:html5bidi@googlegroups.com">
+    <style>
+      body {
+        font-size:2em;
+      }
+      .test, .ref {
+        border: medium solid gray;
+        width: 500px;
+        margin: 20px;
+	direction: rtl;
+	position: relative;
+      }
+      .comments { display: none; }
+      .underletter { position: absolute; right: 0; top: 0; z-index: 0; }
+      .eraseletter { position: absolute; right: 0; top: 0; z-index: 10; color: white; }
+      .letter { position: absolute; right: 0; top: 0;  z-index: 20; }
+    </style>
+  </head>
+  <body>
+    <div class="instructions"><p>Test passes if the two boxes below look exactly the same.</p></div>
+    <div class="comments">
+      Key to entities used below:
+        &#x05E9; - Hebrew Letter Shin.
+	&#x05B1; - Hebrew Point Hataf Segol (diacritic under letter)
+	&#x05C1; - Hebrew Point Shin Dot (diacritic over letter)
+	&#x05BC; - Hebrew Point Dagesh (diacritic in middle of letter)
+    </div>
+    <div class="test">
+      <div class="letter" style="opacity: 0.25;">&#x05E9;</div>
+      <div class="eraseletter">&#x05E9;</div>
+      <div class="underletter" style="color: blue;">&#x05E9;&#x05C1;</div>
+      <div class="underletter" style="color: brown;">&#x05E9;&#x05BC;</div>
+      <div class="underletter" style="color: purple;">&#x05E9;&#x05B1;</div>
+      <div>&nbsp;</div>
+    </div>
+    <div class="ref">
+      <div class="letter" style="opacity: 0.25;">&#x05E9;</div>
+      <div class="eraseletter">&#x05E9;</div>
+      <div class="underletter" style="color: blue;">&#x05E9;&#x05C1;</div>
+      <div class="underletter" style="color: brown;">&#x05E9;&#x05BC;</div>
+      <div class="underletter" style="color: purple;">&#x05E9;&#x05B1;</div>
+      <div>&nbsp;</div>
+    </div>
+  </body>
+</html>
